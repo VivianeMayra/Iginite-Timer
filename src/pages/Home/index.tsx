@@ -14,12 +14,25 @@ export function Home() {
       <form action="">
         <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
-          <TaskInput id="task" placeholder="Dê um nome para o seu projeto" />
+          <TaskInput
+            id="task"
+            list="task-suggestions"
+            placeholder="Dê um nome para o seu projeto"
+          />
+
+          <datalist id="task-suggestions">
+            <option value="estudar js" />
+            <option value="ir à academia" />
+            <option value="ler um bom livro" />
+          </datalist>
           <label htmlFor="minutesAmount">Durante</label>
           <MinutesAmountInput
-            typeof="number"
+            type="number"
             id="minutesAmount"
             placeholder="00"
+            step={5}
+            min={5}
+            max={60}
           />
 
           <span>minutos.</span>
